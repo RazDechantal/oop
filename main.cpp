@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>
 
 void printMenu()
 {
@@ -67,27 +68,40 @@ void gotoNextTimeframe()
 
 void processUserOption(int userOption)
 {
+    // map from ints to function pointers
+    std::map<int, void (*)()> menu;
+    // connect 1 to the printHelp function
+    menu[1] = printHelp;
+    menu[2] = printMarketStats;
+    menu[3] = enterAsk;
+    menu[4] = enterBid;
+    menu[5] = printWallet;
+    menu[6] = gotoNextTimeframe;
+
     if (userOption > -1 && userOption < 7)
     {
         switch (userOption)
         {
         case 1:
-            printHelp();
+            menu[1]();
             break;
         case 2:
-            printMarketStats();
+            menu[2]();
             break;
         case 3:
-            enterAsk();
+            menu[3]();
             break;
         case 4:
+            menu[4]();
             enterBid();
             break;
         case 5:
+            menu[5]();
             printWallet();
             break;
         case 6:
         default:
+            menu[6]();
             gotoNextTimeframe();
             break;
         }
@@ -100,7 +114,6 @@ void processUserOption(int userOption)
 
 int main()
 {
-    // ... more options here
     int userOption = 100;
     bool wantToTrade = true;
     printMenu();
