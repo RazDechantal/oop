@@ -12,6 +12,14 @@ void printMenu()
     std::cout << "4: Place a bid " << std::endl;
     std::cout << "5: Print wallet " << std::endl;
     std::cout << "6: Continue " << std::endl;
+    std::cout << "____________________________" << std::endl;
+}
+
+void printHelp()
+{
+    std::cout << "Help - your aim is to make money." << std::endl;
+    std::cout << "Analyse the market and make bids" << std::endl;
+    std::cout << "and offers. " << std::endl;
 }
 
 int getUserOption()
@@ -22,6 +30,41 @@ int getUserOption()
     return choice;
 }
 
+void printMarketStats()
+{
+    std::cout << "==================================" << std::endl;
+    std::cout << "Exchange status is not implemented yet!" << std::endl;
+    std::cout << "==================================" << std::endl;
+}
+
+void enterAsk()
+{
+    std::cout << "==================================" << std::endl;
+    std::cout << "Ask is not implemented yet!" << std::endl;
+    std::cout << "==================================" << std::endl;
+}
+
+void enterBid()
+{
+    std::cout << "==================================" << std::endl;
+    std::cout << "Bid is not implemented yet!" << std::endl;
+    std::cout << "==================================" << std::endl;
+}
+
+void printWallet()
+{
+    std::cout << "==================================" << std::endl;
+    std::cout << "Wallet is not implemented yet!" << std::endl;
+    std::cout << "==================================" << std::endl;
+}
+
+void gotoNextTimeframe()
+{
+    std::cout << "==================================" << std::endl;
+    std::cout << "Continue!" << std::endl;
+    std::cout << "==================================" << std::endl;
+}
+
 void processUserOption(int userOption)
 {
     if (userOption > -1 && userOption < 7)
@@ -29,30 +72,23 @@ void processUserOption(int userOption)
         switch (userOption)
         {
         case 1:
-            std::cout << "Option: " << userOption << std::endl;
-            std::cout << "Help - choose options from the menu" << std::endl;
-            std::cout << "and follow the on screen instructions." << std::endl;
+            printHelp();
             break;
         case 2:
-            std::cout << "Option: " << userOption << std::endl;
-            std::cout << "Exchange status is not implemented yet!" << std::endl;
+            printMarketStats();
             break;
         case 3:
-            std::cout << "Option: " << userOption << std::endl;
-            std::cout << "Ask is not implemented yet!" << std::endl;
+            enterAsk();
             break;
         case 4:
-            std::cout << "Option: " << userOption << std::endl;
-            std::cout << "Bid is not implemented yet!" << std::endl;
+            enterBid();
             break;
         case 5:
-            std::cout << "Option: " << userOption << std::endl;
-            std::cout << "Wallet is not implemented yet!" << std::endl;
+            printWallet();
             break;
         case 6:
         default:
-            std::cout << "Option: " << userOption << std::endl;
-            std::cout << "Continue!" << std::endl;
+            gotoNextTimeframe();
             break;
         }
     }
