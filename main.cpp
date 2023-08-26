@@ -68,9 +68,7 @@ void gotoNextTimeframe()
 
 void processUserOption(int userOption)
 {
-    // map from ints to function pointers
     std::map<int, void (*)()> menu;
-    // connect 1 to the printHelp function
     menu[1] = printHelp;
     menu[2] = printMarketStats;
     menu[3] = enterAsk;
